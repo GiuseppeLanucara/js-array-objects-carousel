@@ -42,17 +42,17 @@ const slider = [
     },
   ];
 
-  let itemTemplate = "";
-  let thumbTemplate = "";
-  let currentIndexActive = 0;
+  let itemT = "";
+  let thumbT = "";
+  let indiceAttivo = 0;
 
     
   for (let i = 0; i < slider.length; i++) {
     let classActive = "";
-    if (i === currentIndexActive) {
+    if (i === indiceAttivo) {
       classActive = "active";
     }
-    itemTemplate += `
+    itemT += `
     <div class="item ${classActive}">
       <img src="${slider[i].immagine}" />
         <div class="title">
@@ -60,10 +60,54 @@ const slider = [
           <p>${slider[i].testo}</p>
         </div>
     </div>`;
-    thumbTemplate += `
+    thumbT += `
     <div class="thumb ${classActive}">
       <img src="${slider[i].immagine}" alt="" />
     </div>`;
   } 
 
- 
+  const itemsContainer = document.querySelector(".items-container");
+  const thumbsContainer = document.querySelector(".thumbs-container");
+
+  itemsContainer.innerHTML = itemT;
+  thumbsContainer.innerHTML += thumbT;
+
+  const next = document.querySelector(" .fa-circle-chevron-down");
+const prev = document.querySelector(" .fa-circle-chevron-up");
+
+
+
+
+
+function slideUpDown(evento) {
+    const direction = this.id;
+    const imgs = document.getElementsByClassName("item");
+    imgs[indiceAttivo].classList.remove("active");
+    const thumbs = document.getElementsByClassName("thumb");
+    thumbs[indiceAttivo].classList.remove("active");
+    //console.log(imgs);
+    if(direction === 'iNext'){
+      if (indiceAttivo === 0) {
+        indiceAttivo = slider.length - 1;
+      } else {
+        indiceAttivo--;
+      }
+    }
+    else {
+      if (indiceAttivo === 4) {
+        indiceAttivo = 0;
+      } else {
+        indiceAttivo++;
+      }
+    }
+    
+    
+    //console.log(currentIndexActive);
+    imgs[indiceAttivo].classList.add("active");
+    //console.log(currentIndexActive);
+    thumbs[indiceAttivo].classList.add("active");
+  }
+  
+  next.addEventListener("click",slideUpDown);
+  prev.addEventListener("click",slideUpDown);
+  const timer = setInterval(slideUpDown, 3000);
