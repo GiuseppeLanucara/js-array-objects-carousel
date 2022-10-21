@@ -47,6 +47,23 @@ const slider = [
   let currentIndexActive = 0;
 
     
-    
+  for (let i = 0; i < slider.length; i++) {
+    let classActive = "";
+    if (i === currentIndexActive) {
+      classActive = "active";
+    }
+    itemTemplate += `
+    <div class="item ${classActive}">
+      <img src="${slider[i].immagine}" />
+        <div class="title">
+          <h2>${slider[i].title}</h2>
+          <p>${slider[i].text}</p>
+        </div>
+    </div>`;
+    thumbTemplate += `
+    <div class="thumb ${classActive}">
+      <img src="${slider[i].immagine}" alt="" />
+    </div>`;
+  } 
 
  

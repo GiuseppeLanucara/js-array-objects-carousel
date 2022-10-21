@@ -7,3 +7,33 @@
   img {
     max-width: 100%;
   }
+  
+
+  .main-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 56, 56);
+  }
+  
+  #slider {
+    height: 30vw;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .items-container,
+  .thumbs-container {
+    height: 100%;
+    position: relative;
+  }
+
+  .thumbs-container {
+    display: flex;
+  }
+
+  .items-container {
+    width: 70%;
+  }
