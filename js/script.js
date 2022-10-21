@@ -15,29 +15,29 @@
 const slider = [
     {
       immagine:"img/01.webp",
-      title:"SPIDERMAN",
-      text:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      titolo:"SPIDERMAN",
+      testo:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
     },
     {
       immagine:"img/02.webp",
-      title:"RACHET AND CLANK",
-      text:"Lorem ipsum",
+      titolo:"RACHET AND CLANK",
+      testo:"Lorem ipsum",
     },
     {
       immagine:"img/03.webp",
-      title:"FORTNITE",
-      text:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      titolo:"FORTNITE",
+      testo:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
   
     },
     {
       immagine:"img/04.webp",
-      title:"STRAY",
-      text:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      titolo:"STRAY",
+      testo:"Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
     },
     {
       immagine:"img/05.webp",
-      title: "AVENGERS",
-      text:"Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,"
+      titolo: "AVENGERS",
+      testo:"Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,"
   
     },
   ];
@@ -56,8 +56,8 @@ const slider = [
     <div class="item ${classActive}">
       <img src="${slider[i].immagine}" />
         <div class="title">
-          <h2>${slider[i].title}</h2>
-          <p>${slider[i].text}</p>
+          <h2>${slider[i].titolo}</h2>
+          <p>${slider[i].testo}</p>
         </div>
     </div>`;
     thumbTemplate += `
